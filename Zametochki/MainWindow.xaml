@@ -1,0 +1,29 @@
+﻿<Window x:Class="Zametochki.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zametochki"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <WrapPanel Height="275" Margin="0,0,-0.4,0">
+            <Button Name="NewTxtButton" Height="40" Width="40" Click="NewTxtButton_Click" > NEW TXT
+            </Button>
+            <Button Name="NewCanvasButton" Height="40" Width="40" Click="NewCanvasButton_Click"> NEW CANVAS
+            </Button>
+            <Button Name="DeleteButton" Height="40" Width="40" Click="DeleteButton_Click">DELETE
+            </Button>
+        </WrapPanel>
+        <ListView Name="lst" Margin="5" PreviewMouseDoubleClick="lst_PreviewMouseDoubleClick" >
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
+                        <GridViewColumn Header="Дата создания" DisplayMemberBinding="{Binding Path=Date}"></GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Window>
